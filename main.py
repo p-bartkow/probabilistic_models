@@ -100,11 +100,11 @@ for i in range(1, iterations):
         np.logical_and(np.logical_not(a), barbaraF)
     )
 
-    # P(A = P | S = T, B = T) = P(A = T | S = T, B = T) / P(S = T, B = T)
+    # P(A = P | S = T, B = T) = P(A = T, S = T, B = T) / P(S = T, B = T)
     p_a_if_sb__mc = np.sum(np.logical_and.reduce((a, stefan, barbara))) / np.sum(
         np.logical_and.reduce((stefan, barbara)))
 
-    # P(W = P | S = T, B = T) = P(W = T | S = T, B = T) / P(S = T, B = T)
+    # P(W = P | S = T, B = T) = P(W = T, S = T, B = T) / P(S = T, B = T)
     p_w_if_sb__mc = np.sum(np.logical_and.reduce((b, stefan, barbara))) / np.sum(
         np.logical_and.reduce((stefan, barbara)))
 
